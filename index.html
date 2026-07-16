@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yassin El Agamy | Portfolio</title>
+<style>
+  :root{
+    --paper:#F5F6F8;
+    --card:#FFFFFF;
+    --ink:#171B22;
+    --muted:#5A6272;
+    --line:#DEE2E9;
+    --amber:#D95F18;      /* Orange Egypt work */
+    --amber-soft:#FBEADF;
+    --pine:#0E7C66;       /* Kashafa / scouting */
+    --pine-soft:#E1F1EC;
+    --chip:#EEF0F4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#12151B; --card:#1A1E26; --ink:#EAECF1; --muted:#9AA3B2;
+      --line:#2A2F3A; --amber:#F08A45; --amber-soft:#33231A;
+      --pine:#3FB89A; --pine-soft:#16302A; --chip:#242935;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#12151B; --card:#1A1E26; --ink:#EAECF1; --muted:#9AA3B2;
+    --line:#2A2F3A; --amber:#F08A45; --amber-soft:#33231A;
+    --pine:#3FB89A; --pine-soft:#16302A; --chip:#242935;
+  }
+  :root[data-theme="light"]{
+    --paper:#F5F6F8; --card:#FFFFFF; --ink:#171B22; --muted:#5A6272;
+    --line:#DEE2E9; --amber:#D95F18; --amber-soft:#FBEADF;
+    --pine:#0E7C66; --pine-soft:#E1F1EC; --chip:#EEF0F4;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Segoe UI",-apple-system,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6; margin:0;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:56px 24px 80px}
+
+  /* ---- hero ---- */
+  header h1{
+    font-family:Georgia,"Iowan Old Style","Times New Roman",serif;
+    font-size:clamp(2.2rem,6vw,3.4rem); line-height:1.1; margin:0 0 10px;
+    text-wrap:balance; letter-spacing:-.01em;
+  }
+  .role{font-size:1.1rem; color:var(--muted); margin:0 0 18px}
+  .role b{color:var(--ink); font-weight:600}
+  .contact{display:flex; flex-wrap:wrap; gap:10px 22px; font-size:.92rem}
+  .contact a{color:var(--amber); text-decoration:none; font-weight:600}
+  .contact a:hover,.contact a:focus-visible{text-decoration:underline}
+  a:focus-visible{outline:2px solid var(--amber); outline-offset:2px; border-radius:2px}
+
+  .lede{
+    margin:30px 0 0; padding:22px 26px; background:var(--card);
+    border-left:3px solid var(--amber); font-size:1.02rem; max-width:62ch;
+  }
+
+  /* ---- sections ---- */
+  section{margin-top:58px}
+  .eyebrow{
+    text-transform:uppercase; letter-spacing:.14em; font-size:.78rem;
+    font-weight:700; color:var(--muted); display:flex; align-items:center; gap:14px;
+    margin:0 0 22px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  /* ---- project cards ---- */
+  .proj{
+    background:var(--card); border:1px solid var(--line);
+    padding:26px 28px; margin-bottom:22px;
+  }
+  .proj-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 14px; margin-bottom:6px}
+  .proj h3{
+    font-family:Georgia,serif; font-size:1.35rem; margin:0; letter-spacing:-.01em;
+  }
+  .tag{
+    font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
+    padding:3px 10px; border-radius:2px;
+  }
+  .tag.orange{background:var(--amber-soft); color:var(--amber)}
+  .tag.kashafa{background:var(--pine-soft); color:var(--pine)}
+  .proj p{margin:8px 0 0; color:var(--muted); max-width:66ch}
+  .proj ul{margin:12px 0 0; padding-left:20px; color:var(--muted)}
+  .proj li{margin-bottom:6px; max-width:64ch}
+  .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .stack span{
+    background:var(--chip); font-size:.8rem; font-weight:600;
+    padding:4px 12px; border-radius:999px; white-space:nowrap;
+  }
+
+  /* ---- skills ---- */
+  .skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px}
+  .skill-group{background:var(--card); border:1px solid var(--line); padding:20px 22px}
+  .skill-group h4{margin:0 0 10px; font-size:.85rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted)}
+  .skill-group .stack{margin-top:0}
+
+  /* ---- experience / education ---- */
+  .xp{border-left:2px solid var(--line); padding-left:24px}
+  .xp-item{position:relative; padding-bottom:26px}
+  .xp-item:last-child{padding-bottom:0}
+  .xp-item::before{
+    content:""; position:absolute; left:-30px; top:8px; width:9px; height:9px;
+    border-radius:50%; background:var(--amber);
+  }
+  .xp-item h3{margin:0; font-size:1.05rem}
+  .xp-item .where{color:var(--muted); font-size:.92rem; margin:2px 0 6px}
+  .xp-item p{margin:0; color:var(--muted); max-width:64ch}
+
+  footer{margin-top:70px; padding-top:24px; border-top:1px solid var(--line);
+    color:var(--muted); font-size:.88rem; display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between}
+
+  @media (prefers-reduced-motion:no-preference){
+    section, .lede{animation:rise .5s ease both}
+    @keyframes rise{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Yassin El Agamy</h1>
+    <p class="role"><b>Engineer &amp; Developer</b> building data-driven tools and community platforms in Cairo, Egypt</p>
+    <div class="contact">
+      <a href="mailto:yassin.elagamy@gmail.com">yassin.elagamy@gmail.com</a>
+    </div>
+    <div class="lede">
+      I work at the intersection of telecom-scale data and hands-on product building, from
+      analytics and reporting work with <strong>Orange Egypt</strong> to designing and shipping
+      <strong>Kashafa</strong>, a platform for scouting groups. I care about tools that real
+      teams actually use.
+    </div>
+  </header>
+
+  <section>
+    <h2 class="eyebrow">Featured projects</h2>
+
+    <div class="proj">
+      <div class="proj-top">
+        <h3>Orange Egypt: Data &amp; Reporting Projects</h3>
+        <span class="tag orange">Orange Egypt</span>
+      </div>
+      <p>Analytics and reporting work supporting business and network teams at one of Egypt's largest telecom operators.</p>
+      <ul>
+        <li>Built and maintained recurring KPI dashboards and reports used by business stakeholders.</li>
+        <li>Cleaned, transformed, and analyzed large customer and operational datasets.</li>
+        <li>Automated manual reporting workflows, cutting turnaround time for routine deliverables.</li>
+        <li>Built big data pipelines: batch processing with Spark over Hadoop/Hive, streaming ingestion with Kafka, and scheduled orchestration with Airflow.</li>
+      </ul>
+      <div class="stack">
+        <span>Python</span><span>SQL</span><span>Apache Spark</span><span>PySpark</span><span>Hadoop</span><span>HDFS</span><span>Hive</span><span>Kafka</span><span>Airflow</span><span>Power BI</span><span>Excel</span><span>Pandas</span><span>Data Visualization</span>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-top">
+        <h3>Kashafa: Scouting Management Platform</h3>
+        <span class="tag kashafa">Kashafa</span>
+      </div>
+      <p>A platform for organizing scouting groups: members, activities, attendance, and communication in one place.</p>
+      <ul>
+        <li>Designed the product end-to-end: member profiles, group structure, activity scheduling, and attendance tracking.</li>
+        <li>Built the front end and backend data layer, with authentication and role-based access for leaders and members.</li>
+        <li>Worked directly with scout leaders to shape features around how troops actually operate.</li>
+      </ul>
+      <div class="stack">
+        <span>JavaScript</span><span>HTML/CSS</span><span>Firebase</span><span>Authentication</span><span>UI/UX Design</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Technical skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h4>Programming</h4>
+        <div class="stack"><span>Python</span><span>SQL</span><span>JavaScript</span><span>HTML/CSS</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Big Data</h4>
+        <div class="stack"><span>Apache Spark</span><span>PySpark</span><span>Hadoop</span><span>HDFS</span><span>Hive</span><span>Kafka</span><span>Airflow</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Data &amp; Analytics</h4>
+        <div class="stack"><span>Power BI</span><span>Excel</span><span>Pandas</span><span>Reporting Automation</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Tools &amp; Platforms</h4>
+        <div class="stack"><span>Firebase</span><span>Git</span><span>VS Code</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Working skills</h4>
+        <div class="stack"><span>Arabic (native)</span><span>English (fluent)</span><span>Teamwork</span><span>Leadership</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Experience</h2>
+    <div class="xp">
+      <div class="xp-item">
+        <h3>Data &amp; Reporting, Orange Egypt</h3>
+        <div class="where">Cairo, Egypt</div>
+        <p>Analytics, dashboarding, and reporting-automation projects supporting business teams.</p>
+      </div>
+      <div class="xp-item">
+        <h3>Founder &amp; Developer, Kashafa</h3>
+        <div class="where">Independent project</div>
+        <p>Built and run a management platform for scouting groups, from concept to working product.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Yassin El Agamy, 2026</span>
+    <span><a href="mailto:yassin.elagamy@gmail.com" style="color:var(--amber);text-decoration:none">Get in touch</a></span>
+  </footer>
+</div>
+</body>
+</html>
