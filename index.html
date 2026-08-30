@@ -86,6 +86,8 @@
   .tag.orange{background:var(--amber-soft); color:var(--amber)}
   .tag.kashafa{background:var(--pine-soft); color:var(--pine)}
   .proj p{margin:8px 0 0; color:var(--muted); max-width:66ch}
+  .proj-link{display:inline-block; margin-top:16px; color:var(--amber); font-weight:700; text-decoration:none}
+  .proj-link:hover,.proj-link:focus-visible{text-decoration:underline}
   .proj ul{margin:12px 0 0; padding-left:20px; color:var(--muted)}
   .proj li{margin-bottom:6px; max-width:64ch}
   .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
@@ -129,6 +131,7 @@
     <p class="role"><b>Engineer &amp; Developer</b> building data-driven tools and community platforms in Cairo, Egypt</p>
     <div class="contact">
       <a href="mailto:yassin.elagamy@gmail.com">yassin.elagamy@gmail.com</a>
+      <a href="https://github.com/yassinelagamy">GitHub</a>
     </div>
     <div class="lede">
       I work at the intersection of telecom-scale data and hands-on product building, from
@@ -156,22 +159,41 @@
       <div class="stack">
         <span>Python</span><span>SQL</span><span>Apache Spark</span><span>PySpark</span><span>Hadoop</span><span>HDFS</span><span>Hive</span><span>Kafka</span><span>Airflow</span><span>Power BI</span><span>Excel</span><span>Pandas</span><span>Data Visualization</span>
       </div>
+      <a class="proj-link" href="https://github.com/yassinelagamy/telecom-pipeline">View the telecom pipeline →</a>
     </div>
 
     <div class="proj">
       <div class="proj-top">
-        <h3>Kashafa: Scouting Management Platform</h3>
-        <span class="tag kashafa">Kashafa</span>
+        <h3>ScoutAI Egypt: Football Intelligence Platform</h3>
+        <span class="tag kashafa">ScoutAI</span>
       </div>
-      <p>A platform for organizing scouting groups: members, activities, attendance, and communication in one place.</p>
+      <p>A full-stack platform that converts match footage and structured observations into traceable player metrics and scouting recommendations.</p>
       <ul>
-        <li>Designed the product end-to-end: member profiles, group structure, activity scheduling, and attendance tracking.</li>
-        <li>Built the front end and backend data layer, with authentication and role-based access for leaders and members.</li>
-        <li>Worked directly with scout leaders to shape features around how troops actually operate.</li>
+        <li>Built a FastAPI and PostgreSQL backend with consent-aware identity, audit trails, and multi-club access controls.</li>
+        <li>Designed a versioned computer-vision event pipeline with detection, tracking, possession, and evidence validation.</li>
+        <li>Implemented explainable ratings, hidden-gem discovery, club-fit analysis, and a Next.js interface.</li>
       </ul>
       <div class="stack">
-        <span>JavaScript</span><span>HTML/CSS</span><span>Firebase</span><span>Authentication</span><span>UI/UX Design</span>
+        <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>OpenCV</span><span>Next.js</span><span>TypeScript</span><span>Docker</span>
       </div>
+      <a class="proj-link" href="https://github.com/yassinelagamy/kora-project">View the source →</a>
+    </div>
+
+    <div class="proj">
+      <div class="proj-top">
+        <h3>Ghaymah Cloud Engineering Assessment</h3>
+        <span class="tag orange">Cloud</span>
+      </div>
+      <p>A documented cloud-delivery exercise covering deployment, health monitoring, CI/CD approval gates, incident analysis, and scalability planning.</p>
+      <ul>
+        <li>Containerized and deployed monitored Python services with reproducible verification evidence.</li>
+        <li>Built a protected delivery workflow with staging checks and production approval.</li>
+        <li>Documented an OOM incident response and a capacity-aware scaling design.</li>
+      </ul>
+      <div class="stack">
+        <span>Python</span><span>Docker</span><span>GitHub Actions</span><span>Monitoring</span><span>CI/CD</span>
+      </div>
+      <a class="proj-link" href="https://github.com/yassinelagamy/GHyamah-Test">View the assessment →</a>
     </div>
   </section>
 
@@ -210,16 +232,16 @@
         <p>Analytics, dashboarding, and reporting-automation projects supporting business teams.</p>
       </div>
       <div class="xp-item">
-        <h3>Founder &amp; Developer, Kashafa</h3>
+        <h3>Developer, ScoutAI Egypt</h3>
         <div class="where">Independent project</div>
-        <p>Built and run a management platform for scouting groups, from concept to working product.</p>
+        <p>Designed and built a football-intelligence platform from video ingestion through explainable scouting recommendations.</p>
       </div>
     </div>
   </section>
 
   <footer>
     <span>Yassin El Agamy, 2026</span>
-    <span><a href="mailto:yassin.elagamy@gmail.com" style="color:var(--amber);text-decoration:none">Get in touch</a></span>
+    <span><a href="https://github.com/yassinelagamy" style="color:var(--amber);text-decoration:none">GitHub</a> · <a href="mailto:yassin.elagamy@gmail.com" style="color:var(--amber);text-decoration:none">Get in touch</a></span>
   </footer>
 </div>
 </body>
